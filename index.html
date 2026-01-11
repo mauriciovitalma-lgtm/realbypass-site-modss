@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real bypass - Mods e Scripts</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-gamepad"></i>
+            <span id="site-name">Real bypass</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <nav class="main-nav">
+                <button class="nav-btn active" onclick="mostrarSecao('home')">
+                    <i class="fas fa-home"></i> Home
+                </button>
+                <button class="nav-btn" onclick="mostrarSecao('mods')">
+                    <i class="fas fa-gamepad"></i> Mods
+                </button>
+            </nav>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Seção HOME -->
+    <section id="home-section" class="page-section active">
+        <!-- Aviso do site (apenas na HOME) -->
+        <div id="site-warning" style="display:none;"></div>
+
+        <div class="welcome-section">
+            <div class="welcome-container">
+                <div class="welcome-text">Seja bem-vindo ao nosso site</div>
+                <p class="welcome-description">
+                    Descubra os melhores mods e scripts para seus jogos favoritos. 
+                    Acesse nossa biblioteca completa e melhore sua experiência de jogo.
+                </p>
+                <div style="display:flex; align-items:center; gap:20px; justify-content:center; margin-top:18px;">
+                    <button class="cta-button" onclick="mostrarSecao('mods')">
+                        <i class="fas fa-arrow-right"></i> Explorar Mods
+                    </button>
+                    <a class="discord-home" href="https://discord.gg/uDnkNmnk4t" target="_blank" title="Entrar no Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="floating-element element-1"></div>
+            <div class="floating-element element-2"></div>
+        </div>
+    </section>
+
+    <!-- Seção MODS -->
+    <section id="mods-section" class="page-section">
+        <!-- Carrossel de Destaques -->
+        <div class="featured-section" id="featured">
+            <h2 class="section-title"><i class="fas fa-star"></i> Em Destaque</h2>
+            <div class="featured-carousel">
+                <div class="featured-track" id="featured-track"></div>
+                <button class="carousel-btn prev" onclick="mudarSlide(-1)" id="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn next" onclick="mudarSlide(1)" id="next-btn"><i class="fas fa-chevron-right"></i></button>
+                <div class="carousel-indicators" id="carousel-indicators"></div>
+            </div>
+        </div>
+
+        <!-- Catálogo de Mods -->
+        <div class="mods-section" id="mods">
+            <h2 class="section-title">Catálogo</h2>
+            
+
+
+            <!-- Busca e Filtros -->
+            <div class="search-filter-container">
+                <input type="text" id="search-input" placeholder="Buscar por nome do mod..." class="search-input">
+                <select id="filter-category" class="filter-select">
+                    <option value="">Filtrar por categoria</option>
+                </select>
+                <select id="filter-featured" class="filter-select">
+                    <option value="">Todos os mods</option>
+                    <option value="featured">Apenas Destaques</option>
+                </select>
+            </div>
+            
+            <!-- Categorias -->
+            <div class="categories" id="categories-container"></div>
+            
+            <!-- Lista de Mods -->
+            <div class="mods-container" id="mods-container"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="about">
+        <div class="footer-content">
+            <div class="footer-logo">Real bypass</div>
+            <p>© 2026 Real bypass. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
